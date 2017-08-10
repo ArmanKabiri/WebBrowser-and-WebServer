@@ -1,0 +1,399 @@
+﻿/****************Initializing*********************/
+@font-face {
+    font-family: bankMeliFont;
+    src: url("bmi.ttf");
+}
+
+body {
+    background-image: url("../images/gridBg.png");
+    direction: rtl;
+    font-family: bankMeliFont;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.user a {
+    color: white;
+    cursor: default;
+}
+
+
+/* mobile menu */
+li.iconMenu {
+    float: left;
+}
+
+    li.iconMenu ul {
+        padding-right: 0;
+        display: none;
+        background-color: white;
+        border-radius: 5px;
+        position: fixed;
+        left: 0;
+        width: 200px;
+        z-index: 999;
+        color: black;
+        box-shadow: black 2px 2px 10px;
+    }
+
+        li.iconMenu ul li {
+            width:200px;
+            transition: .4s;
+            border-bottom: groove 1px grey;
+            color: black;
+            padding:20px;
+        }
+
+            li.iconMenu ul li a {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                color: black;
+            }
+
+            li.iconMenu ul li:hover {
+                transition: .4s;
+                background-color: #009688;
+            }
+
+
+/**********************Top Menu************************/
+div.topNav {
+    background-color: #009688;
+    color: #000;
+    font-size: 13px;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    position: fixed;
+}
+
+div.menuIcon{
+    float: right;
+    height: 40px;
+    background-color:#007f88;
+    padding-top: 10px;
+}
+.menuIcon span{
+    height: 40px;
+    width: 40px;
+    padding-right:10px;
+    font-size:20px; 
+    color: black;
+    cursor:pointer;
+    transition: 0.3s;
+    display: block;
+}
+div.menuIcon span:hover{
+    color: white;
+}
+
+div.user {
+    float: right;
+    padding: 10px;
+    padding-right: 18px;
+}
+
+
+
+div.menu {
+    width: 75%;
+    padding-right: 18px;
+    float: left;
+}
+
+    div.menu ul {
+        margin: 0;
+        float: left;
+        list-style: none;
+    }
+
+        div.menu ul li {
+            float: right;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-left: solid rgba(0, 0, 0, 0.12) 1px;
+        }
+
+    div.menu a {
+        color: #000;
+        transition: 0.3s;
+    }
+
+        div.menu a:hover {
+            transition: 0.3s;
+            color: #ffffff;
+        }
+
+    div.menu i.icon {
+        font-size: 25px;
+        font-style: normal;
+    }
+
+/*******************SideBar Navigaion************************/
+nav#sid {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    width: 250px;
+    height: 100%;
+    z-index: 3;
+    overflow: auto;
+    position: fixed;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+
+    nav#sid a {
+        transition: 0.3s;
+        color: #000;
+        display: block;
+        padding: 7px;
+        padding-right: 36px;
+        font-size: 12px;
+    }
+
+        nav#sid a:hover {
+            transition: 0.3s;
+            background-color: #c7c7c7;
+        }
+
+    nav#sid i.icon {
+        font-size: 18px;
+        font-style: normal;
+    }
+
+div.accordion {
+    width: 100%;
+    cursor: pointer;
+}
+
+a.theme {
+    transition: 0.3s;
+    background-color: #009688;
+    color: #fff;
+}
+
+div.accordion-content {
+    position: relative;
+    padding: 8px 16px;
+    display: none;
+}
+
+div.show {
+    display: block;
+}
+
+
+/******************************Main********************************/
+div#myMain {
+    padding-top: 60px;
+    transition: 0.5s;
+    margin: 0 5px;
+}
+
+#main {
+    clear: both;
+}
+
+div#slideShow {
+    display: inline;
+    box-shadow: 2px 2px 14px grey;
+    float: right;
+    max-width: 700px;
+    position: relative;
+    -moz-user-select: none;
+    border: 2px solid #009688;
+    background-color: #fff;
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+    div#slideShow img.pics {
+        transition: 1s;
+        width: 100%;
+        animation: 1.5s ease 0s normal none 1 running opac;
+    }
+
+@keyframes opac {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+div#slideShow figure {
+    margin: 0 0;
+    text-align: center;
+}
+
+div#slideShow figcaption.figs {
+    font-size: 13px;
+    margin-top: 5px;
+    animation: 1.5s ease 0s normal none 1 running opac;
+}
+
+div#slideShow div {
+    direction: ltr;
+    color: #fff;
+    font-size: 15px;
+    position: absolute;
+    margin-bottom: 32px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+div#slideShow span.rightSlide {
+    transition: 0.3s;
+    cursor: pointer;
+    float: right;
+    padding-right: 12px;
+}
+
+div#slideShow span.leftSlide {
+    transition: 0.3s;
+    cursor: pointer;
+    float: left;
+    padding-left: 12px;
+}
+
+div#slideShow span.rightSlide:hover {
+    transition: 0.3s;
+    color: orange;
+}
+
+div#slideShow span.leftSlide:hover {
+    transition: 0.3s;
+    color: orange;
+}
+
+div#slideShow div span.dots {
+    transition: 0.3s;
+    background-color: transparent;
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #c7c7c7;
+}
+
+    div#slideShow div span.dots:hover {
+        transition: 0.3s;
+        background-color: #fff;
+    }
+
+div#slideShow div span.white {
+    background-color: #fff;
+}
+
+div#userPic {
+    display: inline;
+    max-width: 300px;
+    position: relative;
+    -moz-user-select: none;
+    box-shadow: 2px 2px 14px grey;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    div#userPic img {
+        max-width: 200px;
+        border: 5px solid #009688;
+        box-shadow: 0 5px 15px black;
+    }
+
+    div#userPic figure {
+        margin: 0;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+        div#userPic figure figcaption {
+            margin-top: 10px;
+            text-shadow: 0 5px 5px black;
+        }
+
+
+div#news {
+    clear: both;
+    margin-bottom: 50px;
+}
+
+    div#news div.newsHead {
+        background-color: #009688;
+        cursor: pointer;
+        padding: 10px;
+        border: 1px grey solid;
+        border-radius: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: 1px 1px 14px grey;
+    }
+
+        div#news div.newsHead i.icon {
+            font-style: normal;
+            font-size: 50px;
+            vertical-align: middle;
+        }
+
+    div#news div.newsItems {
+        background-color: floralwhite;
+        box-shadow: 1px 1px 14px grey;
+        width: 100%;
+        padding: 0;
+    }
+
+        div#news div.newsItems button {
+            text-align: right;
+            transition: 0.3s;
+            font-family: bankMeliFont;
+            padding: 30px;
+            width: 100%;
+            background-color: #b4b4b4;
+            border: medium none;
+            cursor: pointer;
+            display: block;
+        }
+
+            div#news div.newsItems button:hover {
+                transition: 0.3s;
+                box-shadow: 0px 0px 20px white;
+                background-color: #fff;
+                color: #000;
+            }
+
+        div#news div.newsItems div {
+            position: relative;
+            padding: 10px 22px;
+            display: none;
+        }
+
+            div#news div.newsItems div.accShow {
+                display: block;
+                font-size: 12px;
+            }
+
+                div#news div.newsItems div.accShow div {
+                    display: block;
+                }
+
+        div#news div.newsItems button.dark-grey {
+            background-color: #5f5f5f;
+            color: #fff;
+        }
+
+/******************************Footer********************************/
+footer {
+    clear:both;
+    background-color: #009688;
+    padding: 100px;
+    text-align: center;
+}

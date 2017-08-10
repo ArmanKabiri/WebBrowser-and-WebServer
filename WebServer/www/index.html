@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>RESPONSIVITY</title>
+
+    <meta charset="utf-8" />
+
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <link href="studentProfileStyle.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        $(document).ready(function () {
+
+            flagClick = false;
+            
+            $(".iconMenu").click(function () {
+                if (!flagClick) {
+                    $(this).find("ul").show(5);
+                }
+                else {
+                    $(this).children("ul").hide(10);
+                }
+                flagClick = !flagClick;
+            });
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <!-- top of the Navigation Bar  MENU --> 
+    <div class="topNav">
+        <div class="menuIcon">
+            <span onclick="showSide();">&#9776; </span>
+        </div>
+        <div class="user">
+            <a> آرمان کبیری چالشتری</a>
+        </div>
+        <div class="menu">
+            <ul class="leftcontainer">
+                <li class="hidden-xs">
+                    <a href="#">صفحه اصلی<i class="icon">&#9962;</i></a>
+                </li>
+                <li class="hidden-xs">
+                    <a href="#">بازگشت<i class="icon">&#9754;</i></a>
+                </li>
+                <li class="hidden-xs">
+                    <a href="#">تنظیمات<i class="icon">&#9874;</i></a>
+                </li>
+                <li class="hidden-xs" style="border-left: none;">
+                    <a href="#">خروج<i class="icon">&#9919;</i></a>
+                </li>
+                <li class="iconMenu visible-xs" style="border-left: none;">
+                    <a style="cursor:pointer;">منو<i class="icon">&#9783;</i></a>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="icon">&#9962;</i> صفحه اصلی</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon">&#9754;</i> بازگشت</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon">&#9874;</i> تنظیمات</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon">&#9919;</i> خروج</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Side Navigation Bar -->
+    <nav id="sid" class="sidenav hidden-sm hidden-xs">
+        <a style="padding: 18px; padding-top: 68px; background-color: #efefef; border-bottom: 2px grey solid;">امور آموزشی <i class="icon">&#8630;</i></a>
+        <a href="#">تغییر کلمه رمز</a>
+        <a href="#">اطلاعات پایه</a>
+        <a href="#" onclick="getCourseList2();">انتخاب درس &#9889;</a>
+        <a href="#">لیست دروس گرفته شده</a>
+        <a href="#">کارنامه نیمسال</a>
+        <a href="#">تقویم آموزشی</a>
+        <a href="#" onclick="getCourseList();">لیست دروس نیمسال &#9861;</a>
+        <a href="#">نمودار پیشرفت تحصیلی</a>
+        <div class="accordion">
+            <a href="javascript:void(0)" onclick="myAccordion('demo1')" class="">پیام‌ها <i class="icon">&#8661;</i></a>
+            <div class="accordion-content" id="demo1">
+                <a href="#">ارسال‌شده‌ها</a>
+                <a href="#">کل پیام‌های دریافتی</a>
+                <a href="#">خوانده نشده‌ها</a>
+            </div>
+        </div>
+        <a href="#">ارسال مدارک</a>
+
+        <a style="padding: 18px; background-color: #efefef; border-bottom: 2px grey solid; border-top: 2px grey solid;">امور دانشجویی <i class="icon">&#8630;</i></a>
+        <a href="#">خوابگاه</a>
+        <a href="#">فرم هم‌اتاقی</a>
+        <a href="#">درخواست وام</a>
+        <a href="#">انتخابات دانشجویی</a>
+        <div class="accordion">
+            <a href="javascript:void(0)" onclick="myAccordion('demo2')" class="">خرید ژتون <i class="icon">&#8661;</i></a>
+            <div class="accordion-content" id="demo2">
+                <a href="#">با دید لیستی</a>
+                <a href="#">با دید هفتگی</a>
+            </div>
+        </div>
+
+        <a style="padding: 18px; background-color: #efefef; border-bottom: 2px grey solid; border-top: 2px grey solid;">فرایندها <i class="icon">&#8630;</i></a>
+        <a href="#">منابع و برنامه‌ها</a>
+        <a href="#">درخواست‌های دانشجویی</a>
+        <a href="#">امور فرهنگی</a>
+        <a href="#">نوبت‌های مراجعه</a>
+    </nav>
+
+
+    <!-- Main -->
+    <div id="myMain" class="col-sm-12 col-xs-12 col-md-9">
+        <main id="main">
+
+            <!-- Slide Show -->
+            <div id="slideShow" class="w3-content w3-display-container">
+                <figure>
+                    <img class="pics" src="images/slide1.jpg" />
+                    <figcaption class="figs">سلام به ایرانم... همیشه جاودانه باشی!</figcaption>
+                </figure>
+                <figure>
+                    <img class="pics" src="images/slide2.jpg" />
+                    <figcaption class="figs">هفته معلم بر همه دانشجویان عزیز مبارک</figcaption>
+                </figure>
+                <figure>
+                    <img class="pics" src="images/slide3.jpg" />
+                    <figcaption class="figs">اعلام نتایج کنکور از تاریخ ۲۵ مرداد</figcaption>
+                </figure>
+                <div>
+                    <span class="leftSlide" onclick="plusPics(-1,'false')">&#10094;</span>
+                    <span class="rightSlide" onclick="plusPics(1,'false')">&#10095;</span>
+                    <span class="dots" onclick="currentPic(1,'false')"></span>
+                    <span class="dots" onclick="currentPic(2,'false')"></span>
+                    <span class="dots" onclick="currentPic(3,'false')"></span>
+                </div>
+            </div>
+
+            <!-- User Picture -->
+            <div id="userPic">
+                <figure>
+                    <img src="images/std_pouya.jpg" />
+                    <figcaption>عکس کاربر</figcaption>
+                </figure>
+            </div>
+
+            <!-- News -->
+            <div id="news">
+                <div class="newsHead">
+                    <h2><i class="icon">&#9762;</i> اطلاعیه‌ها</h2>
+                </div>
+                <div class="newsItems">
+                    <button class="" onclick="myAccFunc('acc1')">بخش شیمی</button>
+                    <div id="acc1" class="">
+                        <div>
+                            <h3>سرور دانلود داخلی</h3>
+                            <p>
+                                با سلام<br />
+                                احتراما"، با توجه به راه اندازي سرور دانلود داخلي در دانشگاه، نرم افزارها و فايل هاي مورد نياز از طريق آدرس download.sku.ac.ir با سرعت بسيار بالا  قابل دريافت مي باشند.<br />
+                                دانلود از اين سايت به صورت داخلي بوده و از حجم اينترنت كاسته نخواهد شد. (در صورتي كه ارتباط VPN خود را قطع كنيد)<br />
+                                لطفا براي افزايش سرعت، در هنگام كار با سامانه ارتباط VPN خود را قطع نماييد. همچنين در غيراينصورت حجم دانلود از اعتبار اينترنت شما كسر خواهد شد.<br />
+                                در صورتي كه فايل مورد نظر شما در سامانه وجود ندارد، فرم تقاضا را از صفحه اول سايت دريافت نموده و مطابق دستورالعمل داخل آن اقدام نموده تا در اسرع وقت فايل توسط كارشناسان اداره دانلود گرديده و در دسترس شما قرار گيرد.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="" onclick="myAccFunc('acc2')">واحد دانشگاهی</button>
+                    <div id="acc2" class="">
+                        <div>
+                            <h3>تمدید نهایی فرم هم‌اتاقی</h3>
+                            <p>
+                                با سلام<br />
+                                احتراما"، با توجه به راه اندازي سرور دانلود داخلي در دانشگاه، نرم افزارها و فايل هاي مورد نياز از طريق آدرس download.sku.ac.ir با سرعت بسيار بالا  قابل دريافت مي باشند.<br />
+                                دانلود از اين سايت به صورت داخلي بوده و از حجم اينترنت كاسته نخواهد شد. (در صورتي كه ارتباط VPN خود را قطع كنيد)<br />
+                                لطفا براي افزايش سرعت، در هنگام كار با سامانه ارتباط VPN خود را قطع نماييد. همچنين در غيراينصورت حجم دانلود از اعتبار اينترنت شما كسر خواهد شد.<br />
+                                در صورتي كه فايل مورد نظر شما در سامانه وجود ندارد، فرم تقاضا را از صفحه اول سايت دريافت نموده و مطابق دستورالعمل داخل آن اقدام نموده تا در اسرع وقت فايل توسط كارشناسان اداره دانلود گرديده و در دسترس شما قرار گيرد.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="" onclick="myAccFunc('acc3')">حوزه مدیریت دانشگاه</button>
+                    <div id="acc3" class="">
+                        <div>
+                            <h3>درخواست تقاضای دفاع پایان نامه</h3>
+                            <p>
+                                با سلام<br />
+                                احتراما"، با توجه به راه اندازي سرور دانلود داخلي در دانشگاه، نرم افزارها و فايل هاي مورد نياز از طريق آدرس download.sku.ac.ir با سرعت بسيار بالا  قابل دريافت مي باشند.<br />
+                                دانلود از اين سايت به صورت داخلي بوده و از حجم اينترنت كاسته نخواهد شد. (در صورتي كه ارتباط VPN خود را قطع كنيد)<br />
+                                لطفا براي افزايش سرعت، در هنگام كار با سامانه ارتباط VPN خود را قطع نماييد. همچنين در غيراينصورت حجم دانلود از اعتبار اينترنت شما كسر خواهد شد.<br />
+                                در صورتي كه فايل مورد نظر شما در سامانه وجود ندارد، فرم تقاضا را از صفحه اول سايت دريافت نموده و مطابق دستورالعمل داخل آن اقدام نموده تا در اسرع وقت فايل توسط كارشناسان اداره دانلود گرديده و در دسترس شما قرار گيرد.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="" onclick="myAccFunc('acc4')">اداره روابط عمومی</button>
+                    <div id="acc4" class="">
+                        <div>
+                            <h3>برگزیدگان جشنواره علمی</h3>
+                            <img src="images/edu.jpg" style="width: 30%;" />
+                            <p>با سلام در صورتي كه فايل مورد نظر شما در سامانه وجود ندارد، فرم تقاضا را از صفحه اول سايت دريافت نموده و مطابق دستورالعمل داخل آن اقدام نموده تا در اسرع وقت فايل توسط كارشناسان اداره دانلود گرديده و در دسترس شما قرار گيرد.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+
+
+        <!-- Footer -->
+
+    </div>
+
+    <footer>
+        <h5>طراحی</h5>
+        <p>کلیه حقوق مادی و معنوی این اثر متعلق به آرمان می‌باشد</p>
+    </footer>
+
+    <script>
+
+        showSideFlag = true;
+        function showSide() {
+            if (showSideFlag) {
+                document.getElementById("sid").style.display = "none";
+                document.getElementById("myMain").className = "";
+            }
+            else {
+                document.getElementById("sid").className = "";
+                document.getElementById("sid").style.display = "block";
+                document.getElementById("myMain").className = "col-sm-9 col-xs-12 col-md-9";
+            }
+            showSideFlag = !showSideFlag;
+        }
+
+
+        function myAccordion(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("show") == -1) {
+                x.className += " show";
+                x.previousElementSibling.className += " theme";
+            } else {
+                x.className = x.className.replace("show", "");
+                x.previousElementSibling.className = "";
+                x.previousElementSibling.className.replace(" theme", "");
+            }
+        }
+
+
+
+        var slideIndex = 1;
+        flagFirstTime = 'true';
+        showPics(slideIndex, 'true');
+
+        function plusPics(n, stringflag) {
+            showPics(slideIndex += n, stringflag);
+        }
+
+        function currentPic(n, stringflag) {
+            showPics(slideIndex = n, stringflag);
+        }
+
+        function showPics(n, stringflag) {
+            flagFirstTime = stringflag;
+            var i;
+            var pics = document.getElementsByClassName("pics");
+            var figs = document.getElementsByClassName("figs");
+            var dots = document.getElementsByClassName("dots");
+            if (n > pics.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = pics.length };
+            for (i = 0; i < pics.length; i++) {
+                pics[i].style.display = "none";
+                figs[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" white", "");
+            }
+            pics[slideIndex - 1].style.display = "block";
+            figs[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " white";
+
+            if (flagFirstTime == 'true') {
+                slideIndex++;
+                if (slideIndex > pics.length) { slideIndex = 1 }
+                setTimeout(function () { showPics(slideIndex, 'true'); }, 2000);
+            }
+        }
+
+        function myAccFunc(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("accShow") == -1) {
+                x.className += " accShow";
+                x.previousElementSibling.className += " dark-grey";
+            } else {
+                x.className = x.className.replace(" accShow", "");
+                x.previousElementSibling.className =
+                x.previousElementSibling.className.replace(" dark-grey", "");
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
